@@ -4,12 +4,12 @@ import { TaskFactory } from "./TaskFactory";
 export class TaskManager {
   private tasks: Task[] = [];
 
-  constructor(tasks: Task[]) {
-    this.tasks = tasks;
+  constructor() {
+    this.tasks = [];
   }
 
   addTask(taskFactory: TaskFactory, description: string, dueDate?: Date): void {
-    const task = taskFactory.taskFactory(description, dueDate);
+    const task = taskFactory.createTask(description, dueDate);
     this.tasks.push(task);
   }
 

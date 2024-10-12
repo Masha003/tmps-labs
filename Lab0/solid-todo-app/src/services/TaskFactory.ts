@@ -8,7 +8,7 @@ export class TaskFactory {
     this.taskCreator = taskCreator;
   }
 
-  taskFactory(description: string, dueDate?: Date): Task {
+  createTask(description: string, dueDate?: Date): Task {
     return this.taskCreator.createTask(description, dueDate);
   }
 }
