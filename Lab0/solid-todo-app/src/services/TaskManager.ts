@@ -5,7 +5,7 @@ import { TaskFactory } from "./TaskFactory";
 export class TaskManager {
   private tasks: Task[] = [];
 
-  constructor(tasks: []) {
+  constructor(tasks: Task[]) {
     this.tasks = tasks;
   }
 
