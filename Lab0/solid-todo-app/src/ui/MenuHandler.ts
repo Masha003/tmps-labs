@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 });
 
 export class MenuHandler {
-  constructor(private taskManager: TaskManager, private uiHandler: UIHandler) {}
+  constructor(private uiHandler: UIHandler) {}
 
   displayMenu(): void {
     console.log(`

@@ -1,12 +1,15 @@
+import { ICreateTask } from "../interfaces/ICreateTask";
 import { Task } from "../models/Task";
 import { TimedTask } from "../models/TimedTask";
 
 export class TaskFactory {
-  static createTask(description: string, dueDate?: Date) {
-    if (dueDate) {
-      return new TimedTask(description, dueDate);
-    }
+  private taskCreator: ICreateTask;
 
-    return new Task(description);
+  constructor(taskCreator: ICreateTask) {
+    this.taskCreator = taskCreator;
+  }
+
+  taskFactory(description: string, dueDate?: Date) {
+    return this.taskCreator.createTask(description, dueDate);
   }
 }

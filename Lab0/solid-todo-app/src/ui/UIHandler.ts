@@ -1,3 +1,5 @@
+import { BasicTaskCreator } from "../creators/BasicTaskCreator";
+import { TimedTaskCreator } from "../creators/TimedTaskCreator";
 import { TimedTask } from "../models/TimedTask";
 import { TaskManager } from "../services/TaskManager";
 import { rl } from "./MenuHandler";
@@ -37,7 +39,12 @@ export class UIHandler {
               (dateString: string) => {
                 const dueDate = new Date(dateString);
                 if (!isNaN(dueDate.getTime())) {
-                  this.taskManager.addTask(description, dueDate);
+                  const timedTaskCreator = new TimedTaskCreator();
+                  this.taskManager.addTask(
+                    timedTaskCreator,
+                    description,
+                    dueDate
+                  );
                   console.log("Task added!");
                 } else {
                   console.log("Invalid date format.");
@@ -46,7 +53,8 @@ export class UIHandler {
               }
             );
           } else {
-            this.taskManager.addTask(description);
+            const basicTaskCreator = new BasicTaskCreator();
+            this.taskManager.addTask(basicTaskCreator, description);
             console.log("Task added!");
             this.displayTasks();
             callback();

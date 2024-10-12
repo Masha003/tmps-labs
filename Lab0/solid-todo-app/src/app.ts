@@ -5,6 +5,6 @@ import { MenuHandler } from "./ui/MenuHandler";
 const tasks: [] = [];
 const taskManager = new TaskManager(tasks);
 const uiHandler = new UIHandler(taskManager);
-const menuHandler = new MenuHandler(taskManager, uiHandler);
+const menuHandler = new MenuHandler(uiHandler);
 
 menuHandler.displayMenu();
