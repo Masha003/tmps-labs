@@ -1,9 +1,10 @@
 import { ICreateTask } from "../interfaces/ICreateTask";
 import { Task } from "../models/Task";
 import { TimedTask } from "../models/TimedTask";
+import { TaskCreator } from "./TaskCreator";
 
-export class TimedTaskCreator implements ICreateTask {
-  createTask(description: string, dueDate: Date): Task {
+export class TimedTaskCreator extends TaskCreator {
+  public taskFactory(description: string, dueDate: Date): Task {
     return new TimedTask(description, dueDate);
   }
 }

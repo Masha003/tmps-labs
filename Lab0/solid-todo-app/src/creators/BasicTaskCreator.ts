@@ -1,8 +1,8 @@
-import { ICreateTask } from "../interfaces/ICreateTask";
 import { Task } from "../models/Task";
+import { TaskCreator } from "./TaskCreator";
 
-export class BasicTaskCreator implements ICreateTask {
-  createTask(description: string): Task {
+export class BasicTaskCreator extends TaskCreator {
+  public taskFactory(description: string): Task {
     return new Task(description);
   }
 }

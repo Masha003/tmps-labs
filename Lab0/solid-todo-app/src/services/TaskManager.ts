@@ -1,5 +1,4 @@
 import { Task } from "../models/Task";
-import { TaskFactory } from "./TaskFactory";
 
 export class TaskManager {
   private tasks: Task[] = [];
@@ -8,8 +7,7 @@ export class TaskManager {
     this.tasks = [];
   }
 
-  addTask(taskFactory: TaskFactory, description: string, dueDate?: Date): void {
-    const task = taskFactory.createTask(description, dueDate);
+  addTask(task: Task): void {
     this.tasks.push(task);
   }
 
