@@ -1,6 +1,4 @@
 import { ICreateTask } from "../interfaces/ICreateTask";
-import { Task } from "../models/Task";
-import { TimedTask } from "../models/TimedTask";
 
 export class TaskFactory {
   private taskCreator: ICreateTask;
