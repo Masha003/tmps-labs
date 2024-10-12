@@ -1,3 +1,4 @@
+import { TimedTask } from "../models/TimedTask";
 import { TaskManager } from "../services/TaskManager";
 import { rl } from "./MenuHandler";
 
@@ -9,8 +10,20 @@ export class UIHandler {
 
     console.log("To-do list: ");
     tasks.forEach((task, index) => {
-      const status = task.isCompleted ? "[x]" : "[ ]";
-      console.log(`${index + 1}. ${status} ${task.description}`);
+      const status = task.getCompleted() ? "[x]" : "[ ]";
+      const deadline =
+        task instanceof TimedTask
+          ? `Due: ${task.getDueDate().toDateString()}.`
+          : "";
+      const timeRemaining =
+        task instanceof TimedTask
+          ? `Time remaining: ${task.timeRemaining()}.`
+          : "";
+      console.log(
+        `${
+          index + 1
+        }. ${status} ${task.getDescription()}. ${deadline} ${timeRemaining}`
+      );
     });
   }
 
@@ -41,8 +54,8 @@ export class UIHandler {
         });
       } else {
         console.log("No task description entered.");
+        callback();
       }
-      callback();
     });
   }
 
