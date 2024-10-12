@@ -193,19 +193,19 @@ createTask(callback):
 ## Screenshots / Results
 
 When running the project, the first thing in the output is the menu with possible options to choose:
-![alt text](image.png)
+![alt text](screenshots/image.png)
 
 For example, the user adds tasks to the list. Then the promt asks to add a description, and specify the type of task (timed or not). If the task is timed, then the user has to add the due date according to the format. After that the task is added and we can see it in the list by choosing option 4.
-![alt text](image-1.png)
+![alt text](screenshots/image-1.png)
 
 I added a few more tasks to the list to have more examples to work with. The user can also mark a task as completed with option 3, and the task is displayed with `[x]`, as completed.
-![alt text](image-2.png)
+![alt text](screenshots/image-2.png)
 
 There is also the possibility to remove a task from the list by choosing oprion 2.
-![alt text](image-3.png)
+![alt text](screenshots/image-3.png)
 
 And in the end, to exit the system.
-![alt text](image-4.png)
+![alt text](screenshots/image-4.png)
 
 ## Conclusions
 
