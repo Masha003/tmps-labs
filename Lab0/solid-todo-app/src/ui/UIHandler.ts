@@ -2,7 +2,10 @@ import { BasicTaskCreator } from "../creators/BasicTaskCreator";
 import { TimedTaskCreator } from "../creators/TimedTaskCreator";
 import { TimedTask } from "../models/TimedTask";
 import { TaskManager } from "../services/TaskManager";
+import { TaskCreationParams } from "../interfaces/TaskCreationParams";
+
 import { rl } from "./MenuHandler";
+import { TaskCreator } from "../creators/TaskCreator";
 
 export class UIHandler {
   constructor(private taskManager: TaskManager) {}
@@ -33,18 +36,17 @@ export class UIHandler {
     rl.question("Enter task description: ", (description: string) => {
       if (description) {
         rl.question("Is this a timed task? (yes/no) ", (res: string) => {
+          let taskCreator: TaskCreator;
+          const params: TaskCreationParams = { description };
           if (res.toLowerCase() === "yes") {
+            taskCreator = new TimedTaskCreator();
             rl.question(
               "Add due date (YYYY-MM-DD HH:MM): ",
               (dateString: string) => {
                 const dueDate = new Date(dateString);
                 if (!isNaN(dueDate.getTime())) {
-                  const timedTaskCreator = new TimedTaskCreator();
-                  const timedTask = timedTaskCreator.createTask(
-                    description,
-                    dueDate
-                  );
-                  // const taskFactory = new TaskFactory(timedTaskCreator);
+                  params.dueDate = dueDate;
+                  const timedTask = taskCreator.createTask(params);
                   this.taskManager.addTask(timedTask);
                   console.log("Task added!");
                 } else {
@@ -54,8 +56,8 @@ export class UIHandler {
               }
             );
           } else {
-            const basicTaskCreator = new BasicTaskCreator();
-            const basicTask = basicTaskCreator.createTask(description);
+            taskCreator = new BasicTaskCreator();
+            const basicTask = taskCreator.createTask(params);
             this.taskManager.addTask(basicTask);
             console.log("Task added!");
             this.displayTasks();
