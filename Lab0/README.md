@@ -12,6 +12,8 @@
 
 This is a simple task management project that allows users to add, remove and complete tasks, with the option to add a deadline. This project implements two principles from the SOLID: the Single Responsibility Principle (SRP) and the Open-Closed Principle (OCP).
 
+Run the project: [Run Instructions](#run-the-project)
+
 ### Single Responsability Principle (SRP)
 
 Single Responsability Principle states that a class should have one and only one reason to change, meaning it should have only one job or responsibility.
@@ -188,6 +190,22 @@ createTask(callback):
             //create task with description using taskCreator
 
     callback()
+```
+
+## Run the project
+
+To run the project, run the following commands:
+
+```
+cd Lab0/solid-todo-app
+npm install
+```
+
+Compile the `.ts` files and run the `app.js` file:
+
+```
+npx tsc
+node src/app.js
 ```
 
 ## Screenshots / Results
