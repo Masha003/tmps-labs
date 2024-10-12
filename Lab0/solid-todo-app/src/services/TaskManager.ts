@@ -1,4 +1,3 @@
-import { ICreateTask } from "../interfaces/ICreateTask";
 import { Task } from "../models/Task";
 import { TaskFactory } from "./TaskFactory";
 
@@ -9,8 +8,8 @@ export class TaskManager {
     this.tasks = tasks;
   }
 
-  addTask(taskCreator: ICreateTask, description: string, dueDate?: Date): void {
-    const task = taskCreator.createTask(description, dueDate);
+  addTask(taskFactory: TaskFactory, description: string, dueDate?: Date): void {
+    const task = taskFactory.taskFactory(description, dueDate);
     this.tasks.push(task);
   }
 

@@ -1,4 +1,5 @@
 import { ICreateTask } from "../interfaces/ICreateTask";
+import { Task } from "../models/Task";
 
 export class TaskFactory {
   private taskCreator: ICreateTask;
@@ -7,7 +8,7 @@ export class TaskFactory {
     this.taskCreator = taskCreator;
   }
 
-  taskFactory(description: string, dueDate?: Date) {
+  taskFactory(description: string, dueDate?: Date): Task {
     return this.taskCreator.createTask(description, dueDate);
   }
 }
