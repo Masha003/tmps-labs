@@ -1,10 +1,3 @@
-// export class Task {
-//   constructor(
-//     public description: string,
-//     public isCompleted: boolean = false
-//   ) {}
-// }
-
 export class Task {
   private description: string;
   private isCompleted: boolean;
