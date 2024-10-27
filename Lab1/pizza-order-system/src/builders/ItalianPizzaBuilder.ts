@@ -2,7 +2,6 @@ import { ItalianIngredientsFactory } from "../factories/ItalianIngredientsFactor
 import { Cheese } from "../models/ingredients/Cheese";
 import { Dough } from "../models/ingredients/Dough";
 import { Sauce } from "../models/ingredients/Sauce";
-import { ItalianPizza } from "../models/ItalianPizza";
 import { Pizza } from "../models/Pizza";
 import { PizzaBuilder } from "./PizzaBuilder";
 

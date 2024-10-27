@@ -1,5 +1,4 @@
 import { AmericanIngredientsFactory } from "../factories/AmericanIngredientsFactory";
-import { AmericanPizza } from "../models/AmericanPizza";
 import { Cheese } from "../models/ingredients/Cheese";
 import { Dough } from "../models/ingredients/Dough";
 import { Sauce } from "../models/ingredients/Sauce";
