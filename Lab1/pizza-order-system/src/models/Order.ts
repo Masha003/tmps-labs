@@ -6,7 +6,6 @@ export class Order {
   }
 
   getOrderDetails(): string {
-    // return `Order for a ${this.type} pizza with ${this.dough.getDetails()} dough, ${this.sauce.getDetails()} sauce, and ${this.cheese.getDetails()} cheese.`;
     return `Order was placed for an ${this.type} pizza. \n`;
   }
 }
