@@ -226,4 +226,5 @@ The three design patterns, Singleton, Abstract Factory, and Builder, work togeth
 ## Bibliiography
 
 [1] https://refactoring.guru/design-patterns/creational-patterns
+
 [2] https://en.wikipedia.org/wiki/Creational_pattern
