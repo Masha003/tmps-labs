@@ -2,3 +2,5 @@ node_modules/
 tasks.json
 
 *.js
+
+dist/
