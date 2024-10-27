@@ -1,7 +1,7 @@
 import { Cheese } from "./Cheese";
 
 export class CheddarCheese implements Cheese {
-  getDetails(): String {
+  getDetails(): string {
     return "Cheese type: Cheddar";
   }
 }

@@ -1,6 +1,9 @@
-import { Order } from "../models/Order";
+import { PizzaIngredientsFactory } from "../factories/PizzaIngredientsFactory";
 import { Pizza } from "../models/Pizza";
 
 export interface PizzaBuilder {
-  build(order: Order): Pizza;
+  prepare(ingredientsFactory: PizzaIngredientsFactory): void;
+  bake(): string;
+  cut(): string;
+  box(): string;
 }

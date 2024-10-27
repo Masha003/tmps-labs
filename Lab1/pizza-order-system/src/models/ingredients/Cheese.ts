@@ -1,3 +1,3 @@
 export interface Cheese {
-  getDetails(): String;
+  getDetails(): string;
 }

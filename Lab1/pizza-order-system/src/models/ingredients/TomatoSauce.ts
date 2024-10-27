@@ -1,7 +1,7 @@
 import { Sauce } from "./Sauce";
 
 export class TomatoSauce implements Sauce {
-  getDetails(): String {
+  getDetails(): string {
     return "Sauce flavour: Tomato";
   }
 }

@@ -1,25 +1,8 @@
-import { Cheese } from "./ingredients/Cheese";
-import { Dough } from "./ingredients/Dough";
-import { Sauce } from "./ingredients/Sauce";
-
-export interface OrderProps {
-  type: "Italian" | "American";
-  dough: Dough;
-  sauce: Sauce;
-  cheese: Cheese;
-}
-
 export class Order {
   type: "Italian" | "American";
-  dough: Dough;
-  sauce: Sauce;
-  cheese: Cheese;
 
-  constructor({ type, dough, sauce, cheese }: OrderProps) {
+  constructor(type: "Italian" | "American") {
     this.type = type;
-    this.dough = dough;
-    this.sauce = sauce;
-    this.cheese = cheese;
   }
 
   getOrderDetails(): string {

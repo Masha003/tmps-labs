@@ -1,7 +1,7 @@
 import { Sauce } from "./Sauce";
 
 export class BBQSauce implements Sauce {
-  getDetails(): String {
+  getDetails(): string {
     return "Sauce flavour: BBQ";
   }
 }

@@ -13,6 +13,6 @@ export class PizzaOrderSystem {
   }
 
   placeOrder(order: Order): void {
-    console.log(`Order placed for: ${order.getOrderDetails()}`);
+    console.log(`${order.getOrderDetails()}`);
   }
 }

@@ -1,3 +1,3 @@
 export interface Dough {
-  getDetails(): String;
+  getDetails(): string;
 }
