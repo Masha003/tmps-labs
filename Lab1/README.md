@@ -15,17 +15,17 @@
 ## Theory
 
 Creational design patterns provide various creation mechanisms, which increase flexibility and reuse of existing code. They are composed of two dominant ideas. One is encapsulating knowledge about which concrete classes the system uses. Another is hiding how instances of these concrete classes are created and combined.
-Examples of creational patterns are:
+Examples of creational patterns are: [1]
 
-- **Singleton Pattern** - creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+- **Singleton Pattern** - creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance. [2]
 
-- **Abstract Factory** - creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+- **Abstract Factory** - creational design pattern that lets you produce families of related objects without specifying their concrete classes. [2]
 
-- **Builder** - creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+- **Builder** - creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code. [2]
 
-- **Prototype** - creational design pattern that lets you copy existing objects without making your code dependent on their classes.
+- **Prototype** - creational design pattern that lets you copy existing objects without making your code dependent on their classes. [2]
 
-- **Factory Method** - creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+- **Factory Method** - creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. [2]
 
 ## Implementation & Used Design Patterns:
 
@@ -222,3 +222,8 @@ When running the project, we have the following output, based on the instruction
 ## Conclusions
 
 The three design patterns, Singleton, Abstract Factory, and Builder, work together to make the pizza ordering system easy to use, flexible, and well-organized. Each pattern has a specific role: the Singleton Pattern manages all orders in one place, the Abstract Factory Pattern picks the right ingredients based on the pizza type, and the Builder Pattern assembles the pizza step-by-step. This approach shows how these design patterns can be used together in a simple project, making the code reusable and allowing for easy addition of new pizza types in the future.
+
+## Bibliiography
+
+[1] https://refactoring.guru/design-patterns/creational-patterns
+[2] https://en.wikipedia.org/wiki/Creational_pattern
