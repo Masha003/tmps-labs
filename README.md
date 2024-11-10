@@ -7,3 +7,7 @@
 ## Lab 1
 
 [Link to lab1](https://github.com/Masha003/tmps-labs/tree/main/Lab1)
+
+## Lab 2
+
+[Link to lab1](https://github.com/Masha003/tmps-labs/tree/main/Lab2)
