@@ -20,7 +20,7 @@ export class ItalianPizzaBuiler implements PizzaBuilder {
     this.sauce = this.ingredientsFactory.createSauce();
     this.cheese = this.ingredientsFactory.createCheese();
 
-    return `--Ingredients for Italian Pizza-- \n 1. ${this.dough.getDetails()} \n 2. ${this.sauce.getDetails()} \n 3. ${this.cheese.getDetails()}`;
+    return `--Prepared ingredients for Italian Pizza-- \n 1. ${this.dough.getDetails()} \n 2. ${this.sauce.getDetails()} \n 3. ${this.cheese.getDetails()}`;
   }
 
   bake(): string {
@@ -45,7 +45,7 @@ export class ItalianPizzaBuiler implements PizzaBuilder {
       cheese: this.cheese,
     });
 
-    pizza.addPreparationStep("Prepare ingredients");
+    pizza.addPreparationStep(this.prepare());
     pizza.addPreparationStep(this.bake());
     pizza.addPreparationStep(this.cut());
     pizza.addPreparationStep(this.box());

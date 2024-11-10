@@ -22,7 +22,7 @@ export class Pizza {
     this.dough = dough;
     this.sauce = sauce;
     this.cheese = cheese;
-    this.description = `${type} Pizza with: \n - ${dough.getDetails()} \n - ${sauce.getDetails()} \n - ${cheese.getDetails()}`;
+    this.description = `${type} Pizza`;
     this.preparationSteps = [];
   }
 
@@ -31,7 +31,7 @@ export class Pizza {
   }
 
   getFullDescription(): string {
-    return `${this.description}\nPreparation:\n ${this.preparationSteps.join(
+    return `${this.description}\nPreparation:\n${this.preparationSteps.join(
       "\n"
     )}`;
   }

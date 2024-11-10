@@ -1,32 +1,19 @@
-import { ItalianIngredientsFactory } from "./factories/ItalianIngredientsFactory";
-import { AmericanIngredientsFactory } from "./factories/AmericanIngredientsFactory";
-import { Order } from "./models/Order";
-import { PizzaOrderSystem } from "./singleton/PizzaOrderingSystem";
-import { ItalianPizzaBuiler } from "./builders/ItalianPizzaBuilder";
-import { AmericanPizzaBuilder } from "./builders/AmericanPizzaBuilder";
+import { ExtraCheese } from "./decorators/ExtraCheese";
+import { Pepperoni } from "./decorators/Pepperoni";
+import { PizzaOrderFacade } from "./PizzaOrderFacade";
 
 function main() {
-  const orderSystem = PizzaOrderSystem.getInstance();
+  const facade = new PizzaOrderFacade();
 
-  const italianFactory = new ItalianIngredientsFactory();
-  const americanFactory = new AmericanIngredientsFactory();
+  facade.choosePizzaType("Italian");
+  facade.addTopping((pizza) => new ExtraCheese(pizza));
+  facade.addTopping((pizza) => new Pepperoni(pizza));
+  facade.getPizza();
 
-  const italianOrder = new Order("Italian");
-  orderSystem.placeOrder(italianOrder);
-
-  const italianPizzaBuilder = new ItalianPizzaBuiler(italianFactory);
-  const italianPizza = italianPizzaBuilder.finalPizza();
-
-  console.log("Prepared italian pizza: ");
-  console.log(italianPizza.getFullDescription());
-
-  const americanOrder = new Order("American");
-  orderSystem.placeOrder(americanOrder);
-
-  const americanPizzaBuilder = new AmericanPizzaBuilder(americanFactory);
-  const americanPizza = americanPizzaBuilder.finalPizza();
-  console.log("Prepared italian pizza: ");
-  console.log(americanPizza.getFullDescription());
+  facade.choosePizzaType("American");
+  facade.addTopping((pizza) => new ExtraCheese(pizza));
+  facade.addTopping((pizza) => new Pepperoni(pizza));
+  facade.getPizza();
 }
 
 main();

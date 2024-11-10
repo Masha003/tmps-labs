@@ -45,7 +45,7 @@ export class AmericanPizzaBuilder implements PizzaBuilder {
       cheese: this.cheese,
     });
 
-    pizza.addPreparationStep("Prepare ingredients");
+    pizza.addPreparationStep(this.prepare());
     pizza.addPreparationStep(this.bake());
     pizza.addPreparationStep(this.cut());
     pizza.addPreparationStep(this.box());

@@ -2,6 +2,6 @@ import { Dough } from "./Dough";
 
 export class ThinCrustDough implements Dough {
   getDetails(): string {
-    return "Dough Type: Thin Crust";
+    return "thin_crust_dough";
   }
 }
