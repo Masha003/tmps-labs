@@ -121,7 +121,7 @@ When running the project, we have the following output, based on the instruction
 
 ## Conclusions
 
-The Command Pattern in this project makes the system more flexible and easier to manage by separating the logic for handling actions like placing and into their own classes. It allows us to manage each action independently while keeping the existing structure clean and modular. For example, when a user places an order, the action is encapsulated in a command object and passed to the `OrderManager`, which executes it. If needed. The commands can also be extended with other actions, such as undoing an order, and those actions will be invoked using the `OrderManager` class.
+The Command Pattern in this project makes the system easier to manage by separating the logic for handling actions like placing an order into separate classes. It allows us to manage each action independently while keeping the existing structure clean and modular. For example, when a user places an order, the action is encapsulated in a command object and passed to the `OrderManager`, which executes it when needed. The commands can also be extended with other actions, such as undoing an order, and those actions will be invoked using the `OrderManager` class.
 
 This design keeps the system organized and makes it easy to add new features in the future, like modifying an order, without having to rewrite existing code.
 
