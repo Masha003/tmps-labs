@@ -11,3 +11,7 @@
 ## Lab 2
 
 [Link to lab1](https://github.com/Masha003/tmps-labs/tree/main/Lab2)
+
+## Lab 3
+
+[Link to lab1](https://github.com/Masha003/tmps-labs/tree/main/Lab3)
