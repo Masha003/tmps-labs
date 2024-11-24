@@ -7,14 +7,18 @@ import { ItalianIngredientsFactory } from "./factories/ItalianIngredientsFactory
 import { AmericanIngredientsFactory } from "./factories/AmericanIngredientsFactory";
 import { PizzaDecorator } from "./decorators/PizzaDecorator";
 import { PizzaOrderSystem } from "./singleton/PizzaOrderingSystem";
+import { OrderManager } from "./singleton/OrderManager";
+import { PlaceOrderCommand } from "./commands/PlaceOrderCommand";
 
 export class PizzaOrderFacade {
   private inventory: InventoryProxy;
+  private orderManager: OrderManager;
   private orderType: "Italian" | "American" | null = null;
   private toppings: ((pizza: Pizza) => PizzaDecorator)[] = [];
 
   constructor() {
     this.inventory = new InventoryProxy();
+    this.orderManager = new OrderManager();
   }
 
   public choosePizzaType(type: "Italian" | "American") {
@@ -43,10 +47,12 @@ export class PizzaOrderFacade {
       order = new Order("American");
     }
 
-    const pizzaOrderSystem = PizzaOrderSystem.getInstance();
-
+    // const pizzaOrderSystem = PizzaOrderSystem.getInstance();
+    const placeOrderCommand = new PlaceOrderCommand(order);
     console.log("=== Order Placed ===");
-    pizzaOrderSystem.placeOrder(order);
+    this.orderManager.executeCommand(placeOrderCommand);
+
+    // pizzaOrderSystem.placeOrder(order);
     console.log("Required ingredients:");
 
     let pizza = builder.finalPizza();
@@ -93,5 +99,9 @@ export class PizzaOrderFacade {
 
     this.orderType = null;
     this.toppings = [];
+  }
+
+  public undoLastAction() {
+    this.orderManager.undoLastCommand();
   }
 }

@@ -8,4 +8,8 @@ export class Order {
   getOrderDetails(): string {
     return `Order was placed for an ${this.type} pizza. \n`;
   }
+
+  getPizzaType(): string {
+    return `${this.type} pizza.`;
+  }
 }
