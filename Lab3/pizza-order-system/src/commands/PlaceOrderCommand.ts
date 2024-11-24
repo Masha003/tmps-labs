@@ -14,9 +14,4 @@ export class PlaceOrderCommand implements Command {
   execute(): void {
     this.pizzaOrderSystem.placeOrder(this.order);
   }
-
-  undo(): void {
-    console.log(`Undoing order for: ${this.order.getOrderDetails()}`);
-    // You can add logic to "reverse" the order if necessary.
-  }
 }

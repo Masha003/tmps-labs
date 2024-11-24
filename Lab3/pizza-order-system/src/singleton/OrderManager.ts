@@ -9,13 +9,4 @@ export class OrderManager {
     this.commandQueue.push(command);
     this.undoStack.push(command);
   }
-
-  undoLastCommand(): void {
-    const command = this.undoStack.pop();
-    if (command) {
-      command.undo();
-    } else {
-      console.log("No commands to undo.");
-    }
-  }
 }

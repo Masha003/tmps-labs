@@ -47,12 +47,10 @@ export class PizzaOrderFacade {
       order = new Order("American");
     }
 
-    // const pizzaOrderSystem = PizzaOrderSystem.getInstance();
     const placeOrderCommand = new PlaceOrderCommand(order);
     console.log("=== Order Placed ===");
     this.orderManager.executeCommand(placeOrderCommand);
 
-    // pizzaOrderSystem.placeOrder(order);
     console.log("Required ingredients:");
 
     let pizza = builder.finalPizza();
@@ -99,9 +97,5 @@ export class PizzaOrderFacade {
 
     this.orderType = null;
     this.toppings = [];
-  }
-
-  public undoLastAction() {
-    this.orderManager.undoLastCommand();
   }
 }
